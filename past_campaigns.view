@@ -1,0 +1,29 @@
+view: past_campaigns {
+  derived_table: {
+    sql: SELECT * FROM `space-force-palf.BI_HACKATHON_70.past_campaigns`;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [detail*]
+  }
+
+  dimension: email {
+    type: string
+    sql: ${TABLE}.Email ;;
+  }
+
+
+  dimension: campaign_id {
+    type: string
+    sql: ${TABLE}.campaignid ;;
+
+  }
+
+  set: detail {
+    fields: [
+      email,
+      campaign_id
+    ]
+  }
+}

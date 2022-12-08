@@ -1,0 +1,57 @@
+view: customer_data {
+  derived_table: {
+    sql: SELECT * FROM `space-force-palf.BI_HACKATHON_70.customer_data`
+      ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [detail*]
+  }
+
+  dimension: customer_id {
+    type: string
+  primary_key: yes
+    sql: ${TABLE}.CustomerID ;;
+
+  }
+
+  dimension: customer_first_name {
+    type: string
+    sql: ${TABLE}.CustomerFirstName ;;
+  }
+
+  dimension: email {
+    type: string
+    sql: ${TABLE}.Email ;;
+    html: <a href="https://hack.looker.com/explore/synergy_data/customer_data?qid=ieOpsSbveBcuIStceJL1Rw&toggle=fil"><button>{{value}}</button></a>
+    ;;
+  }
+
+  dimension: order_date {
+    type: date
+    datatype: date
+    sql: ${TABLE}.OrderDate ;;
+  }
+
+  dimension: brand {
+    type: string
+    sql: ${TABLE}.Brand ;;
+  }
+
+  dimension: channel {
+    type: string
+    sql: ${TABLE}.Channel ;;
+  }
+
+  set: detail {
+    fields: [
+      customer_id,
+      customer_first_name,
+      email,
+      order_date,
+      brand,
+      channel
+    ]
+  }
+}

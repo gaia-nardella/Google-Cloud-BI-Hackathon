@@ -1,0 +1,21 @@
+connection: "lookerdata"
+
+include: "/*.view.lkml"                # include all views in the views/ folder in this project
+
+# Select the views that should be a part of this model,
+# and define the joins that connect them together.
+#
+explore: customer_data {
+  always_filter: {
+    filters: [customer_data.order_date: "2021", customer_data.channel: "GoogleSearch"]
+  }
+
+  join: past_campaigns {
+
+    type: left_outer
+    sql_on: ${past_campaigns.email} = ${customer_data.email}  ;;
+    relationship: many_to_many
+
+  }
+
+}

@@ -24,7 +24,7 @@ view: customer_data {
   dimension: email {
     type: string
     sql: ${TABLE}.Email ;;
-    html: <a href="https://hack.looker.com/explore/synergy_data/customer_data?qid=ieOpsSbveBcuIStceJL1Rw&toggle=fil"><button>{{value}}</button></a>
+    html: <a href="https://hack.looker.com/explore/synergy_data/customer_data?f[past_campaigns.email]={{value}}"><button>{{value}}</button></a>
     ;;
   }
 

@@ -38,5 +38,7 @@ https://github.com/looker-open-source/healthcare_demo
 
 https://www.youtube.com/watch?v=XTvJjCeAT74
 
+https://developers.google.com/looker-studio/connector
+
 
 

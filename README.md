@@ -6,7 +6,7 @@ https://cloud.google.com/looker/docs/filter-expressions
 
 https://community.looker.com/technical-tips-tricks-1021/override-look-filters-in-the-url-30834
 
-Resources:
+Some Hackathon Resources:
 
 https://developers.looker.com/
 
